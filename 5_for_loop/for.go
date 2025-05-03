@@ -22,4 +22,7 @@ package main
 		}
 		fmt.Println(i)
 	}
+	for i:=range 5{
+		fmt.Println(i)
+	}
 }
