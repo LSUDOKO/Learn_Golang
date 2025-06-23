@@ -1,8 +1,9 @@
 package main
 
 import "fmt"
+
 // import "time"
-func main(){
+func main() {
 	// simple switch
 	// i:=22
 	// switch i{
@@ -24,15 +25,17 @@ func main(){
 	// 		fmt.Println("workday")
 	// }
 	// type switch
-	whoami := func(i interface{}){
-		switch t :=i.(type){
-			case bool:
-				fmt.Println("i am bool",t)
-			case int:
-				fmt.Println("i am int",t)
-			default:
-				fmt.Println("i am default",t)
+	whoami := func(i interface{}) {
+		switch t := i.(type) {
+		case bool:
+			fmt.Println("i am bool", t)
+		case int:
+			fmt.Println("i am int", t)
+		default:
+			fmt.Println("i am default", t)
 		}
 	}
 	whoami(25)
-} 
+}
+
+// 1 hour 1 min
