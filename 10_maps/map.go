@@ -7,8 +7,8 @@ func main(){
 
 
 	// setting an element in map
-	m["name"]="Arpit"
-
+	m["name"]="Arpit"  
+	fmt.Println(m)//print map[name:Arpit]
 
 	// getting an element from map
 	// fmt.Println(m["name"])
@@ -22,7 +22,7 @@ func main(){
 	fmt.Println(m)
 	fmt.Println(m["name"])
 	// for checking element is present or not we can use comma ok syntax
-	v,ok:=m["name"]//ok will return true or false and v key of map
+	v,ok:=m["name"]//ok will return true or false and v value of map
 	if ok{
 		fmt.Println("present")
 	}else{
@@ -36,5 +36,5 @@ func main(){
 	m2:=make(map[string]string)
 	m2["name"]="Arpit"
 	m2["phone"]="1234567890"
-	fmt.Println(maps.Equal(m1,m2))
+	fmt.Println(maps.Equal(m1,m2))// for checking two maps are equal or not 
 }
