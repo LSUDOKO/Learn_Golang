@@ -4,7 +4,9 @@ import "fmt"
 
 var c, python, java bool
 
+// outside we can not use i:=7 outside the main function
 func main() {
 	var i int
-	fmt.Println(i, c, python, java)
+	k := 7
+	fmt.Println(i, c, python, java, k)
 }
