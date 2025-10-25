@@ -39,5 +39,4 @@ func main() {
 		{7, true},
 	}
 	fmt.Println(r)
-
 }
