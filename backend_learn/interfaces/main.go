@@ -36,21 +36,49 @@
 // 	return math.Sqrt(v.x*v.x + v.y*v.y)
 // }
 
+// package main
+
+// import "fmt"
+
+// type any interface{}
+
+// func main() {
+// 	var i any = "hello world!"
+// 	s := i.(string) //intialily i has type of interface now it has type of string
+// 	fmt.Println(s)
+
+// 	s, ok := i.(string) //here ok will check that is it true or false
+// 	fmt.Println(s, ok)
+
+// 	f, ok := i.(float64) //f will return 0 and ok will change false
+// 	fmt.Println(f, ok)
+
+// }
+
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
-type any interface{}
+type MyError struct {
+	When time.Time
+	What string
+}
 
+func (e *MyError) Error() string {
+	return fmt.Sprintf("at %v , %s", e.When, e.What)
+}
+
+func run() error {
+	return &MyError{
+		time.Now(),
+		"it did't work",
+	}
+}
 func main() {
-	var i any = "hello world!"
-	s := i.(string) //intialily i has type of interface now it has type of string
-	fmt.Println(s)
-
-	s, ok := i.(string) //here ok will check that is it true or false
-	fmt.Println(s, ok)
-
-	f, ok := i.(float64) //f will return 0 and ok will change false
-	fmt.Println(f, ok)
-
+	if err := run(); err != nil {
+		fmt.Println(err)
+	}
 }
